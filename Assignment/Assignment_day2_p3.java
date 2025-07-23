@@ -30,6 +30,22 @@ class binarysum//Sum of two binary strings
 			
 		}
                System.out.println(result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 }
 }
@@ -38,6 +54,11 @@ class binarysum//Sum of two binary strings
 //--------------------------------------------------------------------------------
 class coltitle//Corresponding Column title
 {
+
+
+
+
+
 	public static void main(String args[])
 	{
 		int n=28;
@@ -172,8 +193,12 @@ class segmentcount// Count the words in the string
 	public static void main(String args[])
 	{
 		String s="Hello, My name is John";
-		String[] s1=s.split("!@#$%^&*()_+-=',.:");
-		System.out.println(s1.length);
+            int segment = 0;
+            for (int i = 0; i < s.length(); i++){
+            if ((i == 0 || s.charAt(i - 1) == ' ')&& s.charAt(i) != ' ')
+                segment++;
+        }
+       System.out.println( segment);
 	}
 }	
 	

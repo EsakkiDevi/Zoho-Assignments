@@ -60,7 +60,7 @@ class pattern1 //X-pattern & R=Pattern with for loop
 	}
 }
 //------------------------------------------------------------------------------
-class pattern2//patterns whit while loop
+class pattern2//patterns with while loop
 {
 	public static void main(String args[])
 	{
