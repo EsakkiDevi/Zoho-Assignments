@@ -84,8 +84,7 @@ class blocks
            System.out.println("Initialize block:"+num);//initialize block
 	}
         
-        /*initialize block(in initiaize block have constructor  with static value ,
-initialize the static value in the block it is executed before constructor*/
+    
         {
 	num=88;
 	}

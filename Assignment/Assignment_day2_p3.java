@@ -30,22 +30,6 @@ class binarysum//Sum of two binary strings
 			
 		}
                System.out.println(result);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		
 }
 }
@@ -54,11 +38,6 @@ class binarysum//Sum of two binary strings
 //--------------------------------------------------------------------------------
 class coltitle//Corresponding Column title
 {
-
-
-
-
-
 	public static void main(String args[])
 	{
 		int n=28;
