@@ -473,4 +473,355 @@ class Shapes
 	}
 	}
 //-----------------------------------------------------------------------------------------------
-       
+class MyString
+{
+	public static void main(String args[])
+		{
+                   String s="HelloWorld";
+ 		   int n=4;
+		   String s1="Good Morning";
+		   String s2="Wor";
+		   stringlength(s);
+		   characterofindex(s,n);
+		   checkEquals(s,s1);
+	           converttoUpper(s);
+		   converttoLower(s);
+		   fetchSub(s,1,5);
+		   concate(s,s1);
+	           checkContains(s,s2);
+		   findIndexOf(s,'l');
+		   repalceChar(s1,'o','x');
+		}
+
+	public static void stringlength(String s)
+		{
+			char[] chars=s.toCharArray();
+			int count=0;
+			for (char c:chars)
+			{
+				count++;
+			}
+			System.out.println("Length of the String is: "+count); 
+		}
+ 	public static void characterofindex(String s,int n)
+		{
+			char[] chars=s.toCharArray();
+			for(int i=0;i<chars.length;i++)
+			{
+				if(i==n)
+				{
+					System.out.println(n+" th position character: "+chars[i]);
+						return;
+				}
+			}
+                        System.out.println("Not Exist the index Value");
+		}
+	public static void checkEquals(String s1,String s2)
+		{
+			char[] c1=s1.toCharArray();
+			char[] c2=s2.toCharArray();
+			if(c1.length != c2.length)
+			{
+				System.out.println("Strings Are not Equal");
+				return;
+			}
+			for(int i=0;i<c1.length;i++)
+			{
+			   if(c1[i]==c2[i])
+				{
+				continue;
+
+            			}
+			   else
+				{
+				System.out.println("Strings Are not Equal");
+				return;
+
+				}
+			}
+			System.out.println("Strings are Equal");
+		}
+	public static void converttoUpper(String s)
+		{
+			String result="";
+			char[] chars=s.toCharArray();
+			for(char c:chars)
+			{
+                               if(c>='a' && c<='z')
+				{
+					result=result+(char)(c-32);
+				}
+				else
+				{
+				result+=c;	
+				}
+				
+              
+			}
+		System.out.println("Uppercase:"+result);
+		}
+
+public static void converttoLower(String s)
+		{
+			String result="";
+			char[] chars=s.toCharArray();
+			for(char c:chars)
+			{
+                               if(c>='A' && c<='Z')
+				{
+					result=result+(char)(c+32);
+				}
+				else
+				{
+				result+=c;	
+				}
+				
+              
+			}
+		System.out.println("LowerCase:"+result);
+		}
+		public static void concate(String s1,String s2)
+		{
+			System.out.println("String Concatenation:"+(s1+s2));
+		}
+               
+ 		public static void checkContains(String s1,String s2)
+		{		
+
+			char[] c1=s1.toCharArray();
+			char[] c2=s2.toCharArray();
+			for(int i=0;i<c1.length-c2.length;i++)
+			{
+				boolean check=true;
+					for(int j=0;j<c2.length;j++)
+					{
+						if(c1[i+j]==c2[j])						{
+							check=false;
+							break;
+						}
+							
+					}
+				if(check)
+				{
+					System.out.println(s1+" contains "+s2);
+						return;
+				}
+			}
+			
+			System.out.println(s1+" Doesnot Contains "+s2);
+				
+
+		}
+		
+		public static void findIndexOf(String s,char c)
+
+		{ 
+			char[] chars=s.toCharArray();
+			for(int i=0;i<chars.length;i++)
+			{
+				if(chars[i]==c)
+				{
+				System.out.println(c+" is positioned in "+i);
+				return;
+				}
+			}
+			System.out.println(c+" doesnot exist");
+		}
+
+		public static void repalceChar(String s,char ori,char rep)
+		{
+			char c[]=s.toCharArray();
+			for(int i=0;i<c.length;i++)
+			{
+				if(c[i]==ori)
+				{
+				c[i]=rep;
+				}
+			}
+			s="";
+			for(char ch:c)
+				{
+				s+=ch;
+				}
+			System.out.println("Replace Character "+ori+" to "+rep+" :"+s);	
+		}
+		public static void fetchSub(String s,int start,int end)
+		{
+			char[] c=s.toCharArray();
+			String str="";
+			for(int i=start;i<end;i++)
+			{
+				str+=c[i];
+			}
+			System.out.println("Substring of "+s+" "+start+" to "+end+" is "+str); 
+		}
+		
+			
+		
+}
+//------------------------------------------------------------------------------------------
+  class basic_cal
+	{
+	  public int add(int a,int b)
+		{
+		  return a+b;
+		}
+	public int sub(int a,int b)
+		{
+			return a-b;
+		}
+	public int multi(int a,int b)
+		{
+			return  a*b;
+		}
+	public int div(int a,int b)
+		{
+			return a/b;
+		}
+  
+}
+class advance_cal extends basic_cal
+{
+	public int calpower(int a,int b)
+		{
+		int powerof=a;
+		for(int i=1;i<b;i++)
+			{
+			powerof=multi(powerof,a);
+			}
+		return powerof;
+
+		}
+
+	public int modulus(int a,int b)
+		{
+		  while(a>=b)
+			{
+			a=sub(a,b);
+			}
+                return a;
+			
+		}
+	public double squareroot(double n)
+		{
+ 			double result=0;
+			if(n==0 || n==1)
+			{
+				return n;
+			}
+                        double low=1,high=n;
+			while(low<=high)
+			{
+			double mid=low+(high-low)/2;
+			double sq=mid*mid;
+			if(sq==n)
+			{
+				return mid;
+			}
+			else if(sq<n)
+			{
+				result=mid;
+				low=mid+1;
+			}
+			else
+			{
+				high=mid-1;
+			}
+			
+			}
+		return result;
+		}
+		
+			
+		
+}
+
+class scientific_cal extends advance_cal
+{
+	public double findSine(double x)
+		{
+                 double result=x-(x*x*x)/6.0;
+                 return result;
+		   
+		
+		}
+}
+
+class calculator
+	{
+
+		public static void main(String args[])
+		{
+		scientific_cal b=new scientific_cal();
+		
+                       Scanner s=new Scanner(System.in);
+			while(true)
+			{
+			
+	    		System.out.println("1.add\n2.subtract\n3.multiply\n4.divide\n5.powerof\n6.modulus\n7.SquareRoot\n8.Sine ");
+		
+			int option=s.nextInt();
+			switch(option)
+				{
+					case 1:
+						System.out.println("Enter the value1:");
+						int x=s.nextInt();
+						System.out.println("Enter the value2:");
+						int y=s.nextInt();
+						System.out.println("Ans:"+b.add(x,y));
+						break;
+					case 2:
+						System.out.println("Enter the value1:");
+						 x=s.nextInt();
+						System.out.println("Enter the value2:");
+						 y=s.nextInt();
+						System.out.println("Ans:"+b.sub(x,y));
+						break;
+					case 3:
+						System.out.println("Enter the value1:");
+						 x=s.nextInt();
+						System.out.println("Enter the value2:");
+						 y=s.nextInt();
+						System.out.println("Ans:"+b.multi(x,y));
+						break;
+					case 4:
+						System.out.println("Enter the value1:");
+						 x=s.nextInt();
+						System.out.println("Enter the value2:");
+						 y=s.nextInt();
+						System.out.println("Ans:"+b.div(x,y));
+						break;
+					case 5:
+						System.out.println("Enter the value1:");
+						 x=s.nextInt();
+						System.out.println("Enter the value2:");
+						 y=s.nextInt();
+						System.out.println("Ans:"+b.calpower(x,y));
+						break;
+					case 6:
+						System.out.println("Enter the value1:");
+						 x=s.nextInt();
+						System.out.println("Enter the value2:");
+						 y=s.nextInt();
+						System.out.println("Ans:"+b.modulus(x,y));
+						break;
+					case 7:
+						System.out.println("Enter the value1:");
+						double n=s.nextDouble();
+						
+						System.out.println("Ans:"+b.squareroot(n));
+						break;
+					case 8:
+						System.out.println("Enter the Radian:");
+						double radian=s.nextDouble();
+						System.out.println("Ans:"+b.findSine(radian));
+						break;
+				
+						
+					default:
+						System.out.println("Invalid option...");
+				}	
+			}
+		}
+	}
+
